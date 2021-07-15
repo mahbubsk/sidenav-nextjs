@@ -5,15 +5,16 @@ import {
 } from '@chakra-ui/react';
 import {BiRightArrow} from 'react-icons/bi';
 
-const NavItem = ({name, icon, collapse, setCollapse, hasChild, link}) => {
+const NavItem = ({name, icon, collapse, setCollapse, hasChild, link, key, isChild}) => {
     return (
-        <Link href={link}>
+        <Link href={link} key={key}>
             <Flex 
                 alignItems="center" 
                 height="40px" _hover={{bg:'gray'}} 
                 cursor="pointer" 
                 transition="all 0.3s"
                 overflow="hidden"
+                pl={isChild && "12px"}
             >
                 <Box mx="5">
 
@@ -34,6 +35,15 @@ const NavItem = ({name, icon, collapse, setCollapse, hasChild, link}) => {
                         </Box>
                     </>
                 }
+                {/* {
+                    child && child.length > 0 && child.map(item=>{
+                            return(
+                                <p>hello</p>
+                            )
+                        }
+                        
+                    ) 
+                } */}
             </Flex>
         </Link>
         
