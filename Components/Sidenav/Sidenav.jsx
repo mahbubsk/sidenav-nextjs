@@ -1,6 +1,7 @@
 // import { useEffect } from 'react'; 
 // import axios from 'axios';
 // import Link from 'next/link';
+import {useState} from 'react';
 import { 
     Box, Flex, Icon, Spacer 
 } from '@chakra-ui/layout';
@@ -25,7 +26,17 @@ const Sidenav = ({collapse, setCollapse}) => {
     //     })
     // },[])
 
+    const [sidebar, setSidebar] = useState(NavbarData)
 
+
+    const collapseHandler = () => {            
+        setCollapse(!collapse);
+        for (let i = 0; i < sidebar.length; i++) {
+            const menuNumber = sidebar[i].menuNumber;
+            sidebar[menuNumber-1].toggleChild = false;
+            setSidebar(sidebar);
+        }
+    }
 
 
     return (
@@ -46,20 +57,24 @@ const Sidenav = ({collapse, setCollapse}) => {
         >
             <ul>
                 {
-                    NavbarData.map((item,i)=>{
+                   sidebar && sidebar.map((item,index)=>{
                         return (
                             <>
+                                {/* {console.log({index})} */}
                                 <NavItem 
-                                    key={i}
                                     link={item.link}
                                     hasChild={item.hasChild}
                                     name={item.name} 
                                     icon={item.icon} 
                                     collapse={collapse} 
                                     setCollapse={setCollapse}
+                                    sidebar={sidebar}
+                                    setSidebar={setSidebar}
+                                    menuNumber={item.menuNumber}
+                                    toggleChild={item.toggleChild}
                                 />
                                 {
-                                    item.child && item.child.length > 0 && item.child.map((childItem,j)=>{
+                                    item.toggleChild && item.child && item.child.length > 0 && item.child.map((childItem,j)=>{
                                         return (
                                             <NavItem 
                                                 key={j}
@@ -78,30 +93,6 @@ const Sidenav = ({collapse, setCollapse}) => {
                         )
                     })
                 }
-                {/* <NavItem
-                    link="/dashboard" 
-                    name="Dashboard" 
-                    icon={MdDashboard} 
-                    collapse={collapse} 
-                    setCollapse={setCollapse}
-                />
-               
-                <NavItem 
-                    link="/products"
-                    hasChild
-                    name="Products" 
-                    icon={GrProductHunt} 
-                    collapse={collapse} 
-                    setCollapse={setCollapse}
-                />
-
-                <NavItem 
-                    link="/settings"
-                    name="settings" 
-                    icon={AiTwotoneSetting} 
-                    collapse={collapse} 
-                    setCollapse={setCollapse}
-                /> */}
                 
             </ul>
 
@@ -111,11 +102,7 @@ const Sidenav = ({collapse, setCollapse}) => {
                 height="50px"
                 justifyContent="center"
                 alignItems="center"
-                onClick={()=>{
-                    // setUsers(false);
-                    // setTeachers(false);
-                    setCollapse(!collapse);
-                }}>
+                onClick={collapseHandler}>
                 {
                     collapse ? 
                         <AiOutlineMenuFold style={{fontSize:'30px'}}/> 

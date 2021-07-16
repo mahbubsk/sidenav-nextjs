@@ -1,7 +1,5 @@
 import {BiRightArrow} from 'react-icons/bi';
 import {
-    AiOutlineMenuFold, 
-    AiOutlineMenuUnfold, 
     AiTwotoneSetting
 } from 'react-icons/ai';
 import {MdDashboard} from 'react-icons/md';
@@ -14,28 +12,54 @@ const sidenavData = [
         matchPath: "/dashboard",
         link:"/dashboard",
         hasChild: false,
-        icon: MdDashboard
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 1
     },
     {
         name: "Products",
         matchPath: "/products",
         link:"/products",
         hasChild: false,
-        icon: GrProductHunt
+        icon: GrProductHunt,
+        toggleChild: false,
+        menuNumber: 2
     },
     {
         name: "Business",
         matchPath: "/business",
         link:"/business",
         hasChild: false,
-        icon: GrProductHunt
+        icon: GrProductHunt,
+        toggleChild: false,
+        menuNumber: 3
     },
     {
         name: "About",
-        matchPath: "/about",
-        link:"/about",
-        hasChild: false,
-        icon: GrProductHunt
+        matchPath: "",
+        link:"",
+        hasChild: true,
+        icon: GrProductHunt,
+        toggleChild: false,
+        menuNumber: 4,
+        child:[
+            {
+                name: "About Us",
+                matchPath: "/about-us",
+                link:"/about-us",
+                hasChild: false,
+                isChild:true,
+                icon: SiGoogleanalytics
+            },
+            {
+                name: "About Company",
+                matchPath: "/about-company",
+                link:"/about-company",
+                hasChild: false,
+                isChild: true,
+                icon: SiGoogleanalytics
+            }
+        ]
     },
     {
         name: "Settings",
@@ -43,6 +67,8 @@ const sidenavData = [
         link:"",
         hasChild: true,
         icon: AiTwotoneSetting,
+        toggleChild: false,
+        menuNumber: 5,
         child:[
             {
                 name: "Google Analytics",
