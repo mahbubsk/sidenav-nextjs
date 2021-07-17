@@ -2,9 +2,10 @@ import {BiRightArrow} from 'react-icons/bi';
 import {
     AiTwotoneSetting
 } from 'react-icons/ai';
-import {MdDashboard} from 'react-icons/md';
+import {MdDashboard, MdBusinessCenter} from 'react-icons/md';
 import {GrProductHunt} from 'react-icons/gr';
 import {SiGoogleanalytics} from 'react-icons/si';
+import {FcAbout} from 'react-icons/fc';
 
 const sidenavData = [
     {
@@ -27,19 +28,37 @@ const sidenavData = [
     },
     {
         name: "Business",
-        matchPath: "/business",
-        link:"/business",
-        hasChild: false,
-        icon: GrProductHunt,
+        matchPath: "",
+        link:"",
+        hasChild: true,
+        icon: MdBusinessCenter,
         toggleChild: false,
-        menuNumber: 3
+        menuNumber: 3,
+        child:[
+            {
+                name: "Business Config",
+                matchPath: "/business-config",
+                link:"/business-config",
+                hasChild: false,
+                isChild:true,
+                icon: MdBusinessCenter
+            },
+            {
+                name: "About business",
+                matchPath: "/about-business",
+                link:"/about-business",
+                hasChild: false,
+                isChild: true,
+                icon: MdBusinessCenter
+            }
+        ]
     },
     {
         name: "About",
         matchPath: "",
         link:"",
         hasChild: true,
-        icon: GrProductHunt,
+        icon: FcAbout,
         toggleChild: false,
         menuNumber: 4,
         child:[
@@ -49,7 +68,7 @@ const sidenavData = [
                 link:"/about-us",
                 hasChild: false,
                 isChild:true,
-                icon: SiGoogleanalytics
+                icon: FcAbout
             },
             {
                 name: "About Company",
@@ -57,7 +76,7 @@ const sidenavData = [
                 link:"/about-company",
                 hasChild: false,
                 isChild: true,
-                icon: SiGoogleanalytics
+                icon: FcAbout
             }
         ]
     },

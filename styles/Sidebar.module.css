@@ -1,0 +1,58 @@
+.arrow-icon{
+    transform: rotate(90deg);
+}
+
+
+
+
+.sidenav-wrapper::-webkit-scrollbar{
+    width:8px !important;
+}
+
+.sidenav-wrapper::-webkit-scrollbar-thumb{
+    
+    background-color: #808895;
+    border-radius: 6px;
+}
+
+.sidenavItem{
+    transition:left 0.3s;
+}
+
+.sidenavItem:hover{
+    background-color: gray;
+}
+
+.sidenavItem:hover .tooltipBox{
+    display: block !important;
+    position: absolute !important;
+    left: 55px !important;
+    color: #424242 !important;
+    background: transparent !important; 
+    width: 250px !important;
+    /* z-index: 100; */
+}
+
+.tooltipBox{
+    display:none;
+}
+
+.tooltipItems {
+    background:white !important;
+    margin-left: 10px !important;
+    text-align: center !important;
+    border-radius:0 0 10px 10px;
+    border: 1px solid rgba(45, 55, 72, 0.466) !important;
+    height: 250px;
+}
+
+.tooltipItem{
+    padding:5px 10px; 
+    cursor: pointer;
+    transition: all 0.2s;
+    list-style-type: none;
+}
+
+.tooltipItem:hover{
+    background: rgba(195, 193, 193, 0.308);
+}

@@ -1,6 +1,3 @@
-// import { useEffect } from 'react'; 
-// import axios from 'axios';
-// import Link from 'next/link';
 import {useState} from 'react';
 import { 
     Box, Flex, Icon, Spacer 
@@ -8,13 +5,13 @@ import {
 import {
     AiOutlineMenuFold, 
     AiOutlineMenuUnfold, 
-    AiTwotoneSetting
 } from 'react-icons/ai';
-import {MdDashboard} from 'react-icons/md';
-import {GrProductHunt} from 'react-icons/gr';
-
 import NavItem from './NavItem';
 import NavbarData from './NavbarData';
+import sidebarStyles from '../../styles/Sidebar.module.css';
+import Tooltip from './Tooltip';
+
+
 
 const Sidenav = ({collapse, setCollapse}) => {
 
@@ -60,7 +57,6 @@ const Sidenav = ({collapse, setCollapse}) => {
                    sidebar && sidebar.map((item,index)=>{
                         return (
                             <>
-                                {/* {console.log({index})} */}
                                 <NavItem 
                                     link={item.link}
                                     hasChild={item.hasChild}
@@ -72,20 +68,25 @@ const Sidenav = ({collapse, setCollapse}) => {
                                     setSidebar={setSidebar}
                                     menuNumber={item.menuNumber}
                                     toggleChild={item.toggleChild}
+                                    childItem={item.child}
+                                    matchPath={item.matchPath}
                                 />
                                 {
                                     item.toggleChild && item.child && item.child.length > 0 && item.child.map((childItem,j)=>{
                                         return (
-                                            <NavItem 
-                                                key={j}
-                                                link={childItem.link}
-                                                isChild={childItem.isChild}
-                                                hasChild={childItem.hasChild}
-                                                name={childItem.name} 
-                                                icon={childItem.icon} 
-                                                collapse={collapse} 
-                                                setCollapse={setCollapse}
-                                            />
+                                            <>
+                                                <NavItem 
+                                                    key={j}
+                                                    link={childItem.link}
+                                                    isChild={childItem.isChild}
+                                                    hasChild={childItem.hasChild}
+                                                    name={childItem.name} 
+                                                    icon={childItem.icon} 
+                                                    collapse={collapse} 
+                                                    setCollapse={setCollapse}
+                                                    matchPath={childItem.matchPath}
+                                                />
+                                            </>
                                         )
                                     }) 
                                 }
@@ -93,6 +94,8 @@ const Sidenav = ({collapse, setCollapse}) => {
                         )
                     })
                 }
+
+
                 
             </ul>
 
