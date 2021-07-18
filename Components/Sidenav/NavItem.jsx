@@ -23,57 +23,59 @@ const NavItem = (props) => {
     const clickHandler = (menuNumber) => {
         
 
-        if(window.innerWidth > 1363 && sidebar){
+        if(window.innerWidth > 1363 && sidebar  && hasChild){
             let sidebarClone = [...sidebar];
             sidebarClone[menuNumber-1].toggleChild = !sidebarClone[menuNumber-1].toggleChild;
             setSidebar(sidebarClone);
-            hasChild && setCollapse(true);  
+             setCollapse(true);  
 
 
-        } else if(window.innerWidth < 1363 && sidebar) {
+        } else if(window.innerWidth < 1363 && sidebar && hasChild ) {
 
             let sidebarClone = [...sidebar];
             sidebarClone[menuNumber-1].toggleChild = !sidebarClone[menuNumber-1].toggleChild;
             setSidebar(sidebarClone);
-            hasChild && setCollapse(false);
+            setCollapse(false);
         }
     }
 
 
     return (
         <Link href={link} key={menuNumber}>
-            <Flex 
-                bg={pathname===matchPath && bgColor_Hover_Active}
-                color={pathname===matchPath ? "teal.200" : 'white'}
-                alignItems="center" 
-                height="40px"
-                _hover={{bg:bgColor_Hover_Active}}
-                cursor="pointer" 
-                transition="all 0.3s"
-                overflow="hidden"
-                pl={isChild && "12px"}
-                onClick={() => clickHandler(menuNumber)}
-                className={sidebarStyles.sidenavItem}
-            >
-                <Box mx="3.5">
-                    <Icon fontSize="20px" as={icon}/>
-                </Box>
-                <Box transition="all 0.3s" 
-                    visibility={{md: !collapse ? "visible" : "hidden", lg: collapse ? "visible" : "hidden"}}
+            <Box className={sidebarStyles.sidenavItem}>
+                <Flex 
+                    bg={pathname===matchPath && bgColor_Hover_Active}
+                    color={pathname===matchPath ? "teal.200" : 'white'}
+                    alignItems="center" 
+                    height="40px"
+                    _hover={{bg:bgColor_Hover_Active}}
+                    cursor="pointer" 
+                    transition="all 0.3s"
+                    overflow="hidden"
+                    pl={isChild && "12px"}
+                    onClick={() => clickHandler(menuNumber)} 
                 >
-                    <chakra.span fontSize="18px">{name}</chakra.span>
-                </Box>
+                    <Box mx="3.5">
+                        <Icon fontSize="20px" as={icon}/>
+                    </Box>
+                    <Box transition="all 0.3s" 
+                        visibility={{md: !collapse ? "visible" : "hidden", lg: collapse ? "visible" : "hidden"}}
+                    >
+                        <chakra.span fontSize="18px">{name}</chakra.span>
+                    </Box>
 
-                {
-                    hasChild && 
-                    <>
-                        <Spacer/>
-                        <Box padding="4">
-                            <BiRightArrow/>
-                        </Box>
-                    </>
-                }
+                    {
+                        hasChild && 
+                        <>
+                            <Spacer/>
+                            <Box padding="4">
+                                <BiRightArrow/>
+                            </Box>
+                        </>
+                    }
 
+                    
+                </Flex>
                 {
                     !collapse && window.innerWidth > 1024 &&
                     <Tooltip 
@@ -83,7 +85,8 @@ const NavItem = (props) => {
                         name={name}
                     />
                 }
-            </Flex>
+            </Box>
+            
         </Link>
         
     )

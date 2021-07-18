@@ -106,6 +106,15 @@ const sidenavData = [
                 icon: SiGoogleanalytics
             }
         ]
+    },
+    {
+        name: "Dashboard",
+        matchPath: "/dashboard",
+        link:"/dashboard",
+        hasChild: false,
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 6
     }
 ]
 

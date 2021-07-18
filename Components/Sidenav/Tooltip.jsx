@@ -14,7 +14,7 @@ function Tooltip({childItem, menuNumber, hasChild, name}) {
     // console.log(childItem, menuNumber);  
 
     
-    const topValue = (menuNumber)*15;
+    const topValue = (menuNumber - 1 ) * 40;
     return (
 
         <Box 
