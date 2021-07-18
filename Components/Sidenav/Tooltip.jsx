@@ -43,11 +43,12 @@ function Tooltip({childItem, menuNumber, hasChild, name}) {
                         childItem && childItem.length > 0 && 
                         childItem.map((item,i)=>{
                             return (
-                            <li className={sidebarStyles.tooltipItem}> 
-                                    <Link href={item.link}> 
-                                        <span>{item.name}</span>
-                                    </Link>
-                                </li>
+                                <Link href={item.link}> 
+                                    <li className={sidebarStyles.tooltipItem}> 
+                                            <span>{item.name}</span>
+                                    </li>
+                                </Link>
+
                             )
                         })
                     }

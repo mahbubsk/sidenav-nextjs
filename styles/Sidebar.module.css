@@ -19,9 +19,6 @@
     transition:left 0.3s;
 }
 
-.sidenavItem:hover{
-    background-color: gray;
-}
 
 .sidenavItem:hover .tooltipBox{
     display: block !important;

@@ -21,17 +21,15 @@ const NavItem = (props) => {
     const bgColor_Hover_Active = "#4a5568";
 
     const clickHandler = (menuNumber) => {
-        
 
-        if(window.innerWidth > 1363 && sidebar  && hasChild){
+        if(window.innerWidth > 1024 && sidebar  && hasChild){
             let sidebarClone = [...sidebar];
             sidebarClone[menuNumber-1].toggleChild = !sidebarClone[menuNumber-1].toggleChild;
             setSidebar(sidebarClone);
-             setCollapse(true);  
+            setCollapse(true);  
 
 
-        } else if(window.innerWidth < 1363 && sidebar && hasChild ) {
-
+        } else if(window.innerWidth < 1024 && sidebar && hasChild ) {
             let sidebarClone = [...sidebar];
             sidebarClone[menuNumber-1].toggleChild = !sidebarClone[menuNumber-1].toggleChild;
             setSidebar(sidebarClone);
