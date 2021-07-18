@@ -22,11 +22,14 @@ const NavItem = (props) => {
 
     const clickHandler = (menuNumber) => {
 
-        if(window.innerWidth >= 1024 && sidebar  && hasChild){
+        if(window.innerWidth >= 1024 && sidebar){
             let sidebarClone = [...sidebar];
             sidebarClone[menuNumber-1].toggleChild = !sidebarClone[menuNumber-1].toggleChild;
             setSidebar(sidebarClone);
-            setCollapse(true);  
+            
+            if(hasChild){
+                setCollapse(true);  
+            }
 
 
         } else if(sidebar){
