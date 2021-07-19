@@ -1,22 +1,19 @@
-.arrow-icon{
-    transform: rotate(90deg);
+.sidenavWrapper {
+    overflow-x: hidden;
+}
+.sidenavWrapper::-webkit-scrollbar{
+    width:7px !important;
 }
 
-
-
-
-.sidenav-wrapper::-webkit-scrollbar{
-    width:8px !important;
-}
-
-.sidenav-wrapper::-webkit-scrollbar-thumb{
+.sidenavWrapper::-webkit-scrollbar-thumb{
     
-    background-color: #808895;
+    background-color: rgb(128, 136, 149,0.5);
+    backdrop-filter: blur(15px);
     border-radius: 6px;
 }
 
 .sidenavItem{
-    transition:left 0.3s;
+    transition:all 0.3s;
 }
 
 
@@ -28,6 +25,12 @@
     background: transparent !important; 
     width: 250px !important;
     /* z-index: 100; */
+}
+
+
+
+.iconRotate{
+    transform: rotate(90deg);
 }
 
 .tooltipBox{

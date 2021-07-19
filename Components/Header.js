@@ -21,7 +21,7 @@ function Header({collapse, setCollapse}) {
             left="0"
             transition="all 0.5s"
             w="100%"
-            paddingLeft={{md: collapse ? "70px" : " 240px", lg: collapse ? "280px" : "70px"}}
+            paddingLeft={{md: collapse ? "70px" : " 270px", lg: collapse ? "280px" : "70px"}}
         >
             <Icon as={FaUserCircle} />
             <chakra.span 

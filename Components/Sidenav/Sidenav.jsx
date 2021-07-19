@@ -52,7 +52,7 @@ const Sidenav = ({collapse, setCollapse}) => {
             color="white" zIndex="99" top="0" left="0"
 
         >
-            <ul>
+            <ul className={sidebarStyles.sidenavWrapper}>
                 {
                    sidebar && sidebar.map((item,index)=>{
                         return (
@@ -75,17 +75,19 @@ const Sidenav = ({collapse, setCollapse}) => {
                                     item.toggleChild && item.child && item.child.length > 0 && item.child.map((childItem,j)=>{
                                         return (
                                             <>
-                                                <NavItem 
-                                                    key={j}
-                                                    link={childItem.link}
-                                                    isChild={childItem.isChild}
-                                                    hasChild={childItem.hasChild}
-                                                    name={childItem.name} 
-                                                    icon={childItem.icon} 
-                                                    collapse={collapse} 
-                                                    setCollapse={setCollapse}
-                                                    matchPath={childItem.matchPath}
-                                                />
+                                               <Box>
+                                                    <NavItem 
+                                                        key={j}
+                                                        link={childItem.link}
+                                                        isChild={childItem.isChild}
+                                                        hasChild={childItem.hasChild}
+                                                        name={childItem.name} 
+                                                        icon={childItem.icon} 
+                                                        collapse={collapse} 
+                                                        setCollapse={setCollapse}
+                                                        matchPath={childItem.matchPath}
+                                                    />
+                                               </Box>
                                             </>
                                         )
                                     }) 

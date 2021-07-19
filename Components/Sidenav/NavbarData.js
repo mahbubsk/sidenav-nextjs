@@ -108,13 +108,112 @@ const sidenavData = [
         ]
     },
     {
+        name: "Settings",
+        matchPath: "",
+        link:"",
+        hasChild: true,
+        icon: AiTwotoneSetting,
+        toggleChild: false,
+        menuNumber: 6,
+        child:[
+            {
+                name: "Google Analytics",
+                matchPath: "/google-analytics",
+                link:"/google-analytics",
+                hasChild: false,
+                isChild:true,
+                icon: SiGoogleanalytics
+            },
+            {
+                name: "Google Analytics",
+                matchPath: "/google-analytics",
+                link:"/google-analytics",
+                hasChild: false,
+                isChild: true,
+                icon: SiGoogleanalytics
+            }
+        ]
+    },
+    {
         name: "Dashboard",
         matchPath: "/dashboard",
         link:"/dashboard",
         hasChild: false,
         icon: MdDashboard,
         toggleChild: false,
-        menuNumber: 6
+        menuNumber: 7
+    },
+    {
+        name: "Dashboard",
+        matchPath: "/dashboard",
+        link:"/dashboard",
+        hasChild: false,
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 8
+    },
+    {
+        name: "Dashboard",
+        matchPath: "/dashboard",
+        link:"/dashboard",
+        hasChild: false,
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 9
+    },
+    {
+        name: "Dashboard",
+        matchPath: "/dashboard",
+        link:"/dashboard",
+        hasChild: false,
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 10
+    },
+    {
+        name: "Dashboard",
+        matchPath: "/dashboard",
+        link:"/dashboard",
+        hasChild: false,
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 11
+    },
+    {
+        name: "Dashboard",
+        matchPath: "/dashboard",
+        link:"/dashboard",
+        hasChild: false,
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 12
+    },
+    {
+        name: "Dashboard",
+        matchPath: "/dashboard",
+        link:"/dashboard",
+        hasChild: false,
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 13
+    },
+    {
+        name: "Dashboard",
+        matchPath: "/dashboard",
+        link:"/dashboard",
+        hasChild: false,
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 14
+    },
+    {
+        name: "Dashboard",
+        matchPath: "/dashboard",
+        link:"/dashboard",
+        hasChild: false,
+        icon: MdDashboard,
+        toggleChild: false,
+        menuNumber: 15
     }
 ]
 

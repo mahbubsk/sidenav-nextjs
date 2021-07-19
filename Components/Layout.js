@@ -12,9 +12,16 @@ const Layout = ({ children }) => {
             <Sidenav collapse={collapse} setCollapse={setCollapse}/>
             <Box >
                 <Header collapse={collapse} setCollapse={setCollapse}/>
-                <main>
+                <Box onClick={()=>{
+                    if(window.innerWidth < 768){
+                        setCollapse(true);
+                    }
+                    
+                }}
+                    height="80vh"
+                    >
                     {children}
-                </main>
+                </Box>
             </Box>
         </Flex>
     )

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import {
     Flex, Box, Icon, Spacer, chakra
 } from '@chakra-ui/react';
-import {BiRightArrow} from 'react-icons/bi';
+import {IoIosArrowDown, IoIosArrowForward} from 'react-icons/io';
 
 import sidebarStyles from '../../styles/Sidebar.module.css';
 import Tooltip from './Tooltip';
@@ -36,7 +36,9 @@ const NavItem = (props) => {
             let sidebarClone = [...sidebar];
             sidebarClone[menuNumber-1].toggleChild = !sidebarClone[menuNumber-1].toggleChild;
             setSidebar(sidebarClone);
-            setCollapse(false);
+            if(hasChild) {
+                setCollapse(false);
+            }
         }
     }
 
@@ -51,7 +53,7 @@ const NavItem = (props) => {
                     height="40px"
                     _hover={{bg:bgColor_Hover_Active}}
                     cursor="pointer" 
-                    transition="all 0.3s"
+                    transition="all 0.4s"
                     overflow="hidden"
                     pl={isChild && "12px"}
                     onClick={() => clickHandler(menuNumber)} 
@@ -69,8 +71,8 @@ const NavItem = (props) => {
                         hasChild && 
                         <>
                             <Spacer/>
-                            <Box padding="4">
-                                <BiRightArrow/>
+                            <Box fontSize="16px" padding="4" transition="all 0.4s" className={toggleChild && sidebarStyles.iconRotate}>
+                                <IoIosArrowForward/>
                             </Box>
                         </>
                     }
