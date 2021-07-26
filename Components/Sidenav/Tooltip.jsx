@@ -26,7 +26,7 @@ function Tooltip({childItem, menuNumber, hasChild, name}) {
                 fontWeight="600"
                 py="2"
                 color="white"
-                fontSize="18px"
+                fontSize="16px"
                 borderRadius={!hasChild && "10px"}
                 borderTopLeftRadius={hasChild && "10px"}
                 borderTopRightRadius={hasChild && "10px"}

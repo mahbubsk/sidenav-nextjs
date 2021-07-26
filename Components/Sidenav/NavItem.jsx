@@ -58,13 +58,13 @@ const NavItem = (props) => {
                     pl={isChild && "12px"}
                     onClick={() => clickHandler(menuNumber)} 
                 >
-                    <Box mx="3.5">
-                        <Icon fontSize="20px" as={icon}/>
+                    <Box mx="18px">
+                        <Icon fontSize="19px" as={icon}/>
                     </Box>
                     <Box transition="all 0.3s" 
                         visibility={{md: !collapse ? "visible" : "hidden", lg: collapse ? "visible" : "hidden"}}
                     >
-                        <chakra.span fontSize="18px">{name}</chakra.span>
+                        <chakra.span>{name}</chakra.span>
                     </Box>
 
                     {

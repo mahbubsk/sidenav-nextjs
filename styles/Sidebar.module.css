@@ -9,12 +9,12 @@
     
     background-color: rgba(161, 170, 185, 0.698);
     backdrop-filter: blur(15px);
-    border-radius: 6px;
+    border-radius: 10px 10px 100px 10px;
 }
 
-.sidenavItem{
+/* .sidenavItem{
     transition:all 0.3s;
-}
+} */
 
 
 .sidenavItem:hover .tooltipBox{
@@ -41,7 +41,7 @@
     background:white !important;
     margin-left: 10px !important;
     text-align: center !important;
-    border-radius:0 0 10px 10px;
+    border-radius:0 0 6px 6px;
     border: 1px solid rgba(45, 55, 72, 0.466) !important;
     /* height: 250px; */
     overflow: auto;
