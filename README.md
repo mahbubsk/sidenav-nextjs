@@ -1,34 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sidebar (for Backend application)
+This is a component of any kind backend application called sidebar.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+1. fork or clone this repository. 
+then run this command.
+2.
+```javascript
+1. npm i or npm install
+2. npm run dev or yarn dev
 ```
+after getting successful message, go to the project folder then open it with any kind of text editor like vs code, brackets, atom etc.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+file structure.
+1. node-modules
+2. [Components][1]
+3. [pages][2]
+4. public
+5. styles
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+most important file is  [NavbarData.js][3]
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```javascript
+const sidenavData = [
+		{
+			name: "Dashboard",
+			matchPath: "/dashboard",
+			link:"/dashboard",
+			hasChild: false,
+			icon: MdDashboard,
+			toggleChild: false,
+			menuNumber: 1
+		},
+		{
+			name: "Products",
+			matchPath: "/products",
+			link:"/products",
+			hasChild: false,
+			icon: GrProductHunt,
+			toggleChild: false,
+			menuNumber: 2
+		},
+		{
+			name: "Business",
+			matchPath: "",
+			link:"",
+			hasChild: true,
+			icon: MdBusinessCenter,
+			toggleChild: false,
+			menuNumber: 3,
+			child:[
+				{
+					name: "Business Config",
+					matchPath: "/business-config",
+					link:"/business-config",
+					hasChild: false,
+					isChild:true,
+					icon: MdBusinessCenter
+				},
+				{
+					name: "About business",
+					matchPath: "/about-business",
+					link:"/about-business",
+					hasChild: false,
+					isChild: true,
+					icon: MdBusinessCenter
+				}
+			]
+		}
+	]
+```
+input your data on navbarData.js as like as  NavbarData.js file of this repo. just change the link or name it will autometically change the sidebar data.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[1]: https://github.com/mahbubsk/sidenav-nextjs/tree/main/Components "Components"
+[2]: https://github.com/mahbubsk/sidenav-nextjs/tree/main/pages "pages"
+[3]: https://github.com/mahbubsk/sidenav-nextjs/blob/main/Components/Sidenav/NavbarData.js "NavbarData.js"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+# Happy Hacking. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![demo](https://i.ibb.co/vD1XpsV/Screenshot.png "demo")](https://i.ibb.co/vD1XpsV/Screenshot.png "demo")
