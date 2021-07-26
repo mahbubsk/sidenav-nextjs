@@ -7,7 +7,7 @@
 
 .sidenavWrapper::-webkit-scrollbar-thumb{
     
-    background-color: rgb(128, 136, 149,0.5);
+    background-color: rgba(161, 170, 185, 0.698);
     backdrop-filter: blur(15px);
     border-radius: 6px;
 }
@@ -48,7 +48,7 @@
     overflow-x: hidden;
 }
 .tooltipItems::-webkit-scrollbar{
-    width:4px;
+    width:6px;
 }
 .tooltipItems::-webkit-scrollbar-thumb{
     background-color: rgba(162, 167, 173, 0.294);
