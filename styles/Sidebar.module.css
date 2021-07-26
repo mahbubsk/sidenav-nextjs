@@ -43,7 +43,17 @@
     text-align: center !important;
     border-radius:0 0 10px 10px;
     border: 1px solid rgba(45, 55, 72, 0.466) !important;
-    height: 250px;
+    /* height: 250px; */
+    overflow: auto;
+    overflow-x: hidden;
+}
+.tooltipItems::-webkit-scrollbar{
+    width:4px;
+}
+.tooltipItems::-webkit-scrollbar-thumb{
+    background-color: rgba(162, 167, 173, 0.294);
+    backdrop-filter: blur(15px);
+    border-radius: 6px;
 }
 
 .tooltipItem{

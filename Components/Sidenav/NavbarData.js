@@ -131,6 +131,62 @@ const sidenavData = [
                 hasChild: false,
                 isChild: true,
                 icon: SiGoogleanalytics
+            },
+            {
+                name: "Google Analytics",
+                matchPath: "/google-analytics",
+                link:"/google-analytics",
+                hasChild: false,
+                isChild: true,
+                icon: SiGoogleanalytics
+            },
+            {
+                name: "Google Analytics",
+                matchPath: "/google-analytics",
+                link:"/google-analytics",
+                hasChild: false,
+                isChild: true,
+                icon: SiGoogleanalytics
+            },
+            {
+                name: "Google Analytics",
+                matchPath: "/google-analytics",
+                link:"/google-analytics",
+                hasChild: false,
+                isChild: true,
+                icon: SiGoogleanalytics
+            },
+            {
+                name: "Google Analytics",
+                matchPath: "/google-analytics",
+                link:"/google-analytics",
+                hasChild: false,
+                isChild: true,
+                icon: SiGoogleanalytics
+            },
+            {
+                name: "Google Analytics",
+                matchPath: "/google-analytics",
+                link:"/google-analytics",
+                hasChild: false,
+                isChild: true,
+                icon: SiGoogleanalytics
+            },
+            {
+                name: "Google Analytics",
+                matchPath: "/google-analytics",
+                link:"/google-analytics",
+                hasChild: false,
+                isChild: true,
+                icon: SiGoogleanalytics
+            },
+            {
+                name: "Google Analytics",
+                matchPath: "/google-analytics",
+                link:"/google-analytics",
+                hasChild: false,
+                isChild: true,
+                icon: SiGoogleanalytics
             }
         ]
     },

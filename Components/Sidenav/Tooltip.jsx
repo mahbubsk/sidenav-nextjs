@@ -38,12 +38,15 @@ function Tooltip({childItem, menuNumber, hasChild, name}) {
             </Box>
             {
                 hasChild && 
-                <ul className={sidebarStyles.tooltipItems}>
+                <Box 
+                    className={sidebarStyles.tooltipItems}
+                    height={childItem.length > 4 && "250px"}
+                >
                     {
                         childItem && childItem.length > 0 && 
                         childItem.map((item,i)=>{
                             return (
-                                <Link href={item.link}> 
+                                <Link key={i} href={item.link}> 
                                     <li className={sidebarStyles.tooltipItem}> 
                                             <span>{item.name}</span>
                                     </li>
@@ -52,7 +55,7 @@ function Tooltip({childItem, menuNumber, hasChild, name}) {
                             )
                         })
                     }
-                </ul>
+                </Box>
             }
                 
         </Box>
